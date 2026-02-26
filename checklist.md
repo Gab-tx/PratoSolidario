@@ -4,85 +4,85 @@ Projeto: Sistema “Prato Solidário”
 1. Validação do Modelo (DER → Modelo Relacional)
 🔎 Entidades obrigatórias identificadas
 
- Doador
+- Doador
 
- Instituição (ONG)
+- Instituição (ONG)
 
- Doação
+- Doação
 
- Lote de Alimento
+- Lote de Alimento
 
- Entrega
+- Entrega
 
- Retirante (ONG ou Voluntário)
+- Retirante (ONG ou Voluntário)
 
 🔎 Relacionamentos corretos
 
- Um Doador → muitas Doações (1:N)
+- Um Doador → muitas Doações (1:N)
 
- Uma ONG → pode receber muitas Doações (1:N)
+- Uma ONG → pode receber muitas Doações (1:N)
 
- Uma Doação → possui muitos Lotes (1:N)
+- Uma Doação → possui muitos Lotes (1:N)
 
- Um Lote → pertence a uma única Doação (N:1)
+- Um Lote → pertence a uma única Doação (N:1)
 
- Uma Entrega → vinculada a uma Doação (1:1 ou 1:N, conforme decisão técnica)
+- Uma Entrega → vinculada a uma Doação (1:1 ou 1:N, conforme decisão técnica)
 
- Entrega vinculada a um responsável pela retirada
+- Entrega vinculada a um responsável pela retirada
 
 🔎 Resolução de N:N
 
- Caso exista relacionamento N:N, foi criada tabela associativa?
+- Caso exista relacionamento N:N, foi criada tabela associativa?
 
- As chaves estrangeiras estão explícitas?
+- As chaves estrangeiras estão explícitas?
 
 2. Estrutura SQL
 🧱 Criação de Tabelas
 
- Todas as tabelas possuem PRIMARY KEY
+- Todas as tabelas possuem PRIMARY KEY
 
- CNPJ definido como UNIQUE
+- CNPJ definido como UNIQUE
 
- Campos obrigatórios estão com NOT NULL
+- Campos obrigatórios estão com NOT NULL
 
- Tipos de dados coerentes (DATE para validade, VARCHAR adequado, etc.)
+- Tipos de dados coerentes (DATE para validade, VARCHAR adequado, etc.)
 
 🔐 Integridade Referencial
 
- Todas as FOREIGN KEYS foram implementadas
+- Todas as FOREIGN KEYS foram implementadas
 
- Regras de DELETE/UPDATE foram definidas (CASCADE, RESTRICT, etc.)
+- Regras de DELETE/UPDATE foram definidas (CASCADE, RESTRICT, etc.)
 
- Não existem chaves órfãs possíveis
+- Não existem chaves órfãs possíveis
 
 📊 Padronização
 
- Nomes de tabelas e colunas seguem padrão consistente
+- Nomes de tabelas e colunas seguem padrão consistente
 
- Não há redundância desnecessária de dados
+- Não há redundância desnecessária de dados
 
- Normalização ao menos até 3FN
+- Normalização ao menos até 3FN
 
 3. Testes
 
- Inserção dos dados:
+- Inserção dos dados:
 
- Doador cadastrado
+- Doador cadastrado
 
- Doação criada
+- Doação criada
 
- Lotes vinculados
+- Lotes vinculados
 
- ONG reserva
+- ONG reserva
 
- Entrega registrada
+- Entrega registrada
 
 4. Organização do Repositório
 
- Script de criação do banco
+- Script de criação do banco
 
- Script de inserts de teste
+- Script de inserts de teste
 
- Script de constraints
+- Script de constraints
 
- README explicando decisões estruturais
+- README explicando decisões estruturais
