@@ -51,5 +51,4 @@
 4. Organização do Repositório
     - [ ] Script de criação do banco
     - [ ] Script de inserts de teste
-    - [ ] Script de constraints
     - [ ] README explicando decisões estruturais
