@@ -1,0 +1,35 @@
+-- DOADOR
+CREATE TABLE Doador (
+    idDoador INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(45) NOT NULL,
+    cnpj VARCHAR(14) NOT NULL UNIQUE,
+    telefone VARCHAR(15),
+    endereco VARCHAR(100)
+) ENGINE=InnoDB;
+
+-- ONG
+CREATE TABLE ONG (
+    idONG INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(45) NOT NULL,
+    cnpj VARCHAR(14) NOT NULL UNIQUE,
+    telefone VARCHAR(15),
+    endereco VARCHAR(100)
+) ENGINE=InnoDB;
+
+-- VOLUNTÁRIO
+CREATE TABLE Voluntario (
+    idVoluntario INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(45) NOT NULL,
+    telefone VARCHAR(15),
+    email VARCHAR(100)
+) ENGINE=InnoDB;
+
+-- ALIMENTO
+CREATE TABLE Alimento (
+    idAlimento INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(45) NOT NULL,
+    unidade_medida VARCHAR(5) NOT NULL,
+    valor DECIMAL(8,2),
+    data_validade DATE NOT NULL,
+    tipo VARCHAR(45)
+) ENGINE=InnoDB;
