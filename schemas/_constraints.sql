@@ -1,0 +1,45 @@
+-- DOACAO
+ALTER TABLE Doacao
+ADD CONSTRAINT fk_doacao_doador
+FOREIGN KEY (fk_doador)
+REFERENCES Doador(idDoador)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE Doacao
+ADD CONSTRAINT fk_doacao_ong
+FOREIGN KEY (fk_ong)
+REFERENCES ONG(idONG)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- LOTE_ALIMENTACAO
+ALTER TABLE Lote_Alimentacao
+ADD CONSTRAINT fk_lote_doacao
+FOREIGN KEY (fk_doacao)
+REFERENCES Doacao(idDoacao)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- ALIMENTO_HAS_LOTE
+ALTER TABLE Alimento_has_Lote_Alimentacao
+ADD CONSTRAINT fk_alimento_lote
+FOREIGN KEY (fk_alimento)
+REFERENCES Alimento(idAlimento)
+ON DELETE RESTRICT ON UPDATE CASCADE;
+
+ALTER TABLE Alimento_has_Lote_Alimentacao
+ADD CONSTRAINT fk_lote_alimento
+FOREIGN KEY (fk_lote_alimentacao)
+REFERENCES Lote_Alimentacao(idLote_Alimentacao)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- ENTREGA
+ALTER TABLE Entrega
+ADD CONSTRAINT fk_entrega_doacao
+FOREIGN KEY (fk_doacao)
+REFERENCES Doacao(idDoacao)
+ON DELETE CASCADE ON UPDATE CASCADE;
+
+ALTER TABLE Entrega
+ADD CONSTRAINT fk_entrega_voluntario
+FOREIGN KEY (fk_voluntario)
+REFERENCES Voluntario(idVoluntario)
+ON DELETE SET NULL ON UPDATE CASCADE;
